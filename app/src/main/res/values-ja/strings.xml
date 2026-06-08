@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 日本語 -->
+<resources>
+    <string name="app_name">PDF 極スキャン</string>
+    <string name="app_subtitle">ローカル完結の PDF ツール</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="save">保存</string>
+    <string name="share">共有</string>
+    <string name="delete">削除</string>
+    <string name="rename">名前変更</string>
+    <string name="search">検索</string>
+    <string name="settings">設定</string>
+    <string name="back">戻る</string>
+    <string name="loading">読み込み中…</string>
+    <string name="retry">再試行</string>
+    <string name="more">その他</string>
+    <string name="open">開く</string>
+    <string name="confirm">確認</string>
+    <string name="select_all">すべて選択</string>
+    <string name="deselect_all">選択解除</string>
+
+    <string name="permission_camera_title">カメラの許可が必要</string>
+    <string name="permission_camera_message">スキャンにはカメラへのアクセス許可が必要です。</string>
+    <string name="permission_storage_title">ストレージの許可が必要</string>
+    <string name="permission_storage_message">ギャラリーから読み込むにはストレージ許可が必要です。</string>
+    <string name="permission_grant">許可する</string>
+
+    <string name="home_title">ドキュメント</string>
+    <string name="home_empty">ドキュメントがありません\nスキャンをタップして開始</string>
+    <string name="home_fab_scan">スキャン</string>
+    <string name="home_fab_link">リンク</string>
+    <string name="home_fab_import">取り込み</string>
+    <string name="home_search_hint">ファイル名 / タグ / 内容を検索</string>
+    <string name="home_sort_by_date">日付順</string>
+    <string name="home_sort_by_name">名前順</string>
+    <string name="home_filter_all">すべて</string>
+    <string name="home_filter_tag">タグ</string>
+    <string name="home_filter_folder">フォルダ</string>
+    <string name="home_count">%1$d 件</string>
+
+    <string name="camera_title">スキャン</string>
+    <string name="camera_capture">撮影</string>
+    <string name="camera_flash_auto">自動</string>
+    <string name="camera_flash_on">オン</string>
+    <string name="camera_flash_off">オフ</string>
+    <string name="camera_filter_original">オリジナル</string>
+    <string name="camera_filter_enhanced">強調</string>
+    <string name="camera_filter_grayscale">グレースケール</string>
+    <string name="camera_filter_bw">白黒</string>
+    <string name="camera_scene_document">書類</string>
+    <string name="camera_scene_idcard">ID カード</string>
+    <string name="camera_scene_whiteboard">ホワイトボード</string>
+    <string name="camera_done">完了</string>
+    <string name="camera_reshoot">撮り直し</string>
+    <string name="camera_pages_count">%1$d ページ</string>
+    <string name="camera_grid">グリッド</string>
+    <string name="camera_hint">書類をフレーム内に置き、自動的に縁を検出します。</string>
+
+    <string name="editor_title">編集</string>
+    <string name="editor_save_pdf">PDF として保存</string>
+    <string name="editor_save_jpg">JPG として保存</string>
+    <string name="editor_rotate">回転</string>
+    <string name="editor_delete">削除</string>
+    <string name="editor_crop">切り抜き</string>
+    <string name="editor_filter">フィルター</string>
+    <string name="editor_reorder">並べ替え</string>
+    <string name="editor_name_hint">ファイル名</string>
+    <string name="editor_tags_hint">タグ（スペースで区切る）</string>
+    <string name="editor_ocr">スキャン後に文字を認識（検索可能）</string>
+    <string name="editor_ocr_languages">認識言語: %1$s</string>
+    <string name="editor_encrypt">PDF を暗号化</string>
+    <string name="editor_watermark">透かしを追加</string>
+    <string name="editor_password_hint">パスワード（6 文字以上）</string>
+    <string name="editor_password_confirm_hint">パスワードを再入力</string>
+    <string name="editor_watermark_text">透かしテキスト</string>
+    <string name="editor_watermark_image">透かし画像</string>
+    <string name="editor_watermark_opacity">不透明度: %1$d%%</string>
+    <string name="editor_watermark_size">サイズ: %1$d sp</string>
+    <string name="editor_watermark_rotation">回転: %1$d°</string>
+    <string name="editor_watermark_tile">タイル</string>
+    <string name="editor_saving">PDF を生成中…</string>
+    <string name="editor_saved">ローカルに保存しました</string>
+    <string name="editor_processing">%1$d / %2$d ページ目を処理中</string>
+
+    <string name="reader_title">閲覧</string>
+    <string name="reader_search_hint">ドキュメント内を検索</string>
+    <string name="reader_no_results">一致なし</string>
+    <string name="reader_page">%1$d / %2$d ページ</string>
+    <string name="reader_highlight">ハイライト</string>
+    <string name="reader_scribble">手書き</string>
+    <string name="reader_signature">署名</string>
+    <string name="reader_night_mode">ナイトモード</string>
+    <string name="reader_day_mode">デイモード</string>
+    <string name="reader_undo">元に戻す</string>
+    <string name="reader_clear">クリア</string>
+    <string name="reader_save_annotations">注釈を保存</string>
+    <string name="reader_annotations_saved">保存しました</string>
+    <string name="reader_jump_page">移動</string>
+    <string name="reader_jump_to_page">ページ番号</string>
+    <string name="reader_password_required">この PDF は暗号化されています。パスワードを入力してください。</string>
+    <string name="reader_password_hint">PDF パスワード</string>
+    <string name="reader_password_unlock">解除</string>
+
+    <string name="pdfedit_title">PDF 編集</string>
+    <string name="pdfedit_merge">結合</string>
+    <string name="pdfedit_split">分割</string>
+    <string name="pdfedit_rotate">回転</string>
+    <string name="pdfedit_delete_pages">ページ削除</string>
+    <string name="pdfedit_reorder">並べ替え</string>
+    <string name="pdfedit_encrypt">暗号化</string>
+    <string name="pdfedit_decrypt">復号</string>
+    <string name="pdfedit_watermark">透かし</string>
+    <string name="pdfedit_to_jpg">JPG に変換</string>
+    <string name="pdfedit_to_pdf">画像から PDF</string>
+    <string name="pdfedit_pages_selected">%1$d ページ選択中</string>
+    <string name="pdfedit_split_range">範囲</string>
+    <string name="pdfedit_split_each">各ページを別ファイルに</string>
+    <string name="pdfedit_split_custom">範囲指定（例: 1-3,5,7-9）</string>
+    <string name="pdfedit_output_name">出力ファイル名</string>
+
+    <string name="tools_title">ツール</string>
+    <string name="tools_merge">PDF 結合</string>
+    <string name="tools_split">PDF 分割</string>
+    <string name="tools_jpg_to_pdf">画像を PDF に</string>
+    <string name="tools_pdf_to_jpg">PDF を JPG に</string>
+    <string name="tools_link_to_pdf">リンクを PDF に</string>
+    <string name="tools_encrypt">PDF 暗号化</string>
+    <string name="tools_decrypt">PDF 復号</string>
+    <string name="tools_watermark">透かし追加</string>
+    <string name="tools_pick_files">ファイル選択</string>
+    <string name="tools_pick_images">画像選択</string>
+
+    <string name="link_title">リンク → PDF</string>
+    <string name="link_input_hint">https の URL を貼り付け</string>
+    <string name="link_go">変換</string>
+    <string name="link_history">最近のリンク</string>
+    <string name="link_loading">読み込み中…</string>
+    <string name="link_render_done">レンダリング完了</string>
+    <string name="link_capture_full">ページ全体</string>
+    <string name="link_capture_area">範囲指定</string>
+    <string name="link_internet_required">この機能にはネットワークが必要です。設定でインターネット権限を許可してください。</string>
+    <string name="link_only_static">静的なページに最適です。動的ページは完全ではない場合があります。</string>
+    <string name="link_invalid_url">URL の形式が正しくありません（https:// で始まる必要があります）</string>
+    <string name="link_load_failed">読み込み失敗: %1$s</string>
+    <string name="link_capture_saved">PDF に保存しました</string>
+    <string name="link_no_history">履歴なし</string>
+    <string name="link_clear_history">履歴を消去</string>
+    <string name="link_progress_loading">読み込み %1$d%%</string>
+    <string name="link_progress_capture">キャプチャ中…</string>
+
+    <string name="settings_title">設定</string>
+    <string name="settings_section_appearance">外観</string>
+    <string name="settings_section_scan">スキャン</string>
+    <string name="settings_section_ocr">OCR</string>
+    <string name="settings_section_data">データ</string>
+    <string name="settings_section_about">このアプリについて</string>
+
+    <string name="settings_language">言語</string>
+    <string name="settings_language_system">システム既定</string>
+    <string name="settings_language_zh">簡体字中国語</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+
+    <string name="settings_theme">テーマ</string>
+    <string name="settings_theme_system">システム既定</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+
+    <string name="settings_default_filter">既定のフィルター</string>
+    <string name="settings_ocr_languages">OCR 言語</string>
+    <string name="settings_ocr_languages_hint">%1$d 個選択中</string>
+    <string name="settings_ocr_lang_zh">中国語</string>
+    <string name="settings_ocr_lang_en">英語</string>
+    <string name="settings_ocr_lang_ja">日本語</string>
+    <string name="settings_ocr_lang_ko">韓国語</string>
+
+    <string name="settings_clear_cache">キャッシュを削除</string>
+    <string name="settings_clear_cache_done">%1$s 削除しました</string>
+
+    <string name="settings_clear_data">すべてのデータを消去</string>
+    <string name="settings_clear_data_warning">すべてのドキュメント、タグ、設定が削除されます。元に戻せません。</string>
+    <string name="settings_clear_data_confirm">消去する</string>
+
+    <string name="settings_about">このアプリについて</string>
+    <string name="settings_about_version">バージョン</string>
+    <string name="settings_about_privacy">本アプリはデータを一切収集しません</string>
+    <string name="settings_about_oss">オープンソース ライセンス</string>
+    <string name="settings_export_logs">ローカル ログをエクスポート</string>
+    <string name="settings_export_logs_done">ログをエクスポートしました</string>
+
+    <string name="error_generic">エラー: %1$s</string>
+    <string name="error_file_not_found">ファイルが見つかりません</string>
+    <string name="error_pdf_corrupted">PDF が破損しています</string>
+    <string name="error_pdf_encrypted">PDF は暗号化されています</string>
+    <string name="error_pdf_encrypted_other">別のパスワードで暗号化されています</string>
+    <string name="error_password_wrong">パスワードが違います</string>
+    <string name="error_password_too_short">パスワードは 6 文字以上</string>
+    <string name="error_password_mismatch">パスワードが一致しません</string>
+    <string name="error_camera_unavailable">カメラが利用できません</string>
+    <string name="error_no_camera_permission">カメラ権限がありません</string>
+    <string name="error_ocr_init_failed">OCR 初期化に失敗</string>
+    <string name="error_ocr_no_text">テキストが認識されませんでした</string>
+    <string name="error_storage_full">ストレージ不足</string>
+    <string name="error_unknown">不明なエラー</string>
+    <string name="error_io">ファイル I/O エラー</string>
+    <string name="error_unsupported_format">未対応の形式</string>
+    <string name="error_pdf_too_large">PDF が大きすぎます（&gt;200 ページ）</string>
+    <string name="error_image_load_failed">画像の読み込みに失敗</string>
+    <string name="error_opencv_init_failed">画像エンジン初期化に失敗</string>
+
+    <string name="share_to_app">PDF 極スキャンで開く</string>
+    <string name="empty_value">空</string>
+    <string name="confirm_delete">削除しますか？</string>
+    <string name="confirm_delete_message">"%1$s" は完全に削除されます。</string>
+    <string name="saved">保存しました</string>
+    <string name="shared">共有しました</string>
+    <string name="copied_to_clipboard">コピーしました</string>
+    <string name="multi_selected">%1$d 件選択中</string>
+    <string name="not_implemented">v0.1 では未実装です</string>
+    <string name="untitled">無題</string>
+    <string name="default_scan_name">スキャン_%1$s</string>
+    <string name="page_unit">ページ</string>
+    <string name="byte_unit">B</string>
+    <string name="kb_unit">KB</string>
+    <string name="mb_unit">MB</string>
+    <string name="gb_unit">GB</string>
+    <string name="file_size_format">%1$s %2$s</string>
+</resources>

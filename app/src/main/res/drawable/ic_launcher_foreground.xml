@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    App 图标前景
+    设计思路：PDF 字母 + 扫描框 + 折角（极简线性）
+    适配 108×108 dp 图层，安全区 72×72 dp 居中
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 文档外形（带折角） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,28 L62,28 L78,44 L78,84 L36,84 Z" />
+    <!-- 折角阴影 -->
+    <path
+        android:fillColor="#D0D0D0"
+        android:pathData="M62,28 L62,44 L78,44 Z" />
+    <!-- 折角高光 -->
+    <path
+        android:strokeColor="#A0A0A0"
+        android:strokeWidth="0.5"
+        android:pathData="M62,28 L62,44 L78,44" />
+
+    <!-- PDF 文字 -->
+    <path
+        android:fillColor="#1E6BFF"
+        android:pathData="M42,56 L42,72 L44,72 L44,66 L47,66 C49,66 50,65 50,63 C50,61 49,60 47,60 L42,60 Z M44,62 L47,62 C47.5,62 48,62.5 48,63 C48,63.5 47.5,64 47,64 L44,64 Z" />
+    <path
+        android:fillColor="#1E6BFF"
+        android:pathData="M52,60 L52,72 L57,72 C59,72 60,70 60,68 L60,64 C60,62 59,60 57,60 Z M54,62 L57,62 C57.8,62 58,62.8 58,64 L58,68 C58,69.2 57.8,70 57,70 L54,70 Z" />
+    <path
+        android:fillColor="#1E6BFF"
+        android:pathData="M62,60 L62,72 L70,72 L70,70 L64,70 L64,67 L69,67 L69,65 L64,65 L64,62 L70,62 L70,60 Z" />
+
+    <!-- 扫描框（角标） -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M30,38 L30,32 L36,32 M84,32 L84,38 M84,80 L84,86 L78,86 M30,86 L30,80" />
+</vector>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider 路径白名单
+    PDF 文件在 App 私有目录内分享出去时使用
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="documents"
+        path="documents/" />
+    <files-path
+        name="exports"
+        path="exports/" />
+    <cache-path
+        name="cache"
+        path="." />
+</paths>

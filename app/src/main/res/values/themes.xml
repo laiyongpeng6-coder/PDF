@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 启动主题；运行后由 ScanApp + MaterialTheme 接管 -->
+    <style name="Theme.PDFScannerSaver" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="splashScreenBackground" tools:targetApi="s">@color/seed_primary</item>
+    </style>
+
+    <!-- Splash theme for API 31+ -->
+    <style name="Theme.PDFScannerSaver.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/seed_primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.PDFScannerSaver</item>
+    </style>
+</resources>

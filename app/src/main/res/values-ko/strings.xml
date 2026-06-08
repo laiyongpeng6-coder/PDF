@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 한국어 -->
+<resources>
+    <string name="app_name">PDF 스캐너 &amp; 세이버</string>
+    <string name="app_subtitle">로컬 오프라인 PDF 도구</string>
+
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="save">저장</string>
+    <string name="share">공유</string>
+    <string name="delete">삭제</string>
+    <string name="rename">이름 변경</string>
+    <string name="search">검색</string>
+    <string name="settings">설정</string>
+    <string name="back">뒤로</string>
+    <string name="loading">로딩 중…</string>
+    <string name="retry">재시도</string>
+    <string name="more">더보기</string>
+    <string name="open">열기</string>
+    <string name="confirm">확인</string>
+    <string name="select_all">전체 선택</string>
+    <string name="deselect_all">선택 해제</string>
+
+    <string name="permission_camera_title">카메라 권한 필요</string>
+    <string name="permission_camera_message">스캔을 위해 카메라 접근 권한이 필요합니다.</string>
+    <string name="permission_storage_title">저장소 권한 필요</string>
+    <string name="permission_storage_message">갤러리에서 가져오려면 저장소 권한이 필요합니다.</string>
+    <string name="permission_grant">권한 부여</string>
+
+    <string name="home_title">문서</string>
+    <string name="home_empty">문서가 없습니다\n스캔을 눌러 시작하세요</string>
+    <string name="home_fab_scan">스캔</string>
+    <string name="home_fab_link">링크</string>
+    <string name="home_fab_import">가져오기</string>
+    <string name="home_search_hint">파일명 / 태그 / 내용 검색</string>
+    <string name="home_sort_by_date">날짜순</string>
+    <string name="home_sort_by_name">이름순</string>
+    <string name="home_filter_all">전체</string>
+    <string name="home_filter_tag">태그</string>
+    <string name="home_filter_folder">폴더</string>
+    <string name="home_count">%1$d개</string>
+
+    <string name="camera_title">스캔</string>
+    <string name="camera_capture">촬영</string>
+    <string name="camera_flash_auto">자동 플래시</string>
+    <string name="camera_flash_on">플래시 켜기</string>
+    <string name="camera_flash_off">플래시 끄기</string>
+    <string name="camera_filter_original">원본</string>
+    <string name="camera_filter_enhanced">향상</string>
+    <string name="camera_filter_grayscale">그레이스케일</string>
+    <string name="camera_filter_bw">흑백</string>
+    <string name="camera_scene_document">문서</string>
+    <string name="camera_scene_idcard">신분증</string>
+    <string name="camera_scene_whiteboard">화이트보드</string>
+    <string name="camera_done">완료</string>
+    <string name="camera_reshoot">다시 촬영</string>
+    <string name="camera_pages_count">%1$d 페이지</string>
+    <string name="camera_grid">그리드</string>
+    <string name="camera_hint">문서를 프레임 안에 놓으면 가장자리가 자동으로 감지됩니다.</string>
+
+    <string name="editor_title">편집</string>
+    <string name="editor_save_pdf">PDF로 저장</string>
+    <string name="editor_save_jpg">JPG로 저장</string>
+    <string name="editor_rotate">회전</string>
+    <string name="editor_delete">삭제</string>
+    <string name="editor_crop">자르기</string>
+    <string name="editor_filter">필터</string>
+    <string name="editor_reorder">순서 변경</string>
+    <string name="editor_name_hint">파일명</string>
+    <string name="editor_tags_hint">태그 (공백으로 구분)</string>
+    <string name="editor_ocr">스캔 후 문자 인식 (검색 가능)</string>
+    <string name="editor_ocr_languages">인식 언어: %1$s</string>
+    <string name="editor_encrypt">PDF 암호화</string>
+    <string name="editor_watermark">워터마크 추가</string>
+    <string name="editor_password_hint">비밀번호 (최소 6자)</string>
+    <string name="editor_password_confirm_hint">비밀번호 확인</string>
+    <string name="editor_watermark_text">워터마크 텍스트</string>
+    <string name="editor_watermark_image">워터마크 이미지</string>
+    <string name="editor_watermark_opacity">불투명도: %1$d%%</string>
+    <string name="editor_watermark_size">크기: %1$d sp</string>
+    <string name="editor_watermark_rotation">회전: %1$d°</string>
+    <string name="editor_watermark_tile">바둑판식</string>
+    <string name="editor_saving">PDF 생성 중…</string>
+    <string name="editor_saved">로컬에 저장됨</string>
+    <string name="editor_processing">%1$d / %2$d 페이지 처리 중</string>
+
+    <string name="reader_title">읽기</string>
+    <string name="reader_search_hint">문서 내 검색</string>
+    <string name="reader_no_results">일치하는 항목 없음</string>
+    <string name="reader_page">%1$d / %2$d 페이지</string>
+    <string name="reader_highlight">하이라이트</string>
+    <string name="reader_scribble">낙서</string>
+    <string name="reader_signature">서명</string>
+    <string name="reader_night_mode">야간 모드</string>
+    <string name="reader_day_mode">주간 모드</string>
+    <string name="reader_undo">실행 취소</string>
+    <string name="reader_clear">지우기</string>
+    <string name="reader_save_annotations">주석 저장</string>
+    <string name="reader_annotations_saved">저장되었습니다</string>
+    <string name="reader_jump_page">이동</string>
+    <string name="reader_jump_to_page">페이지 번호</string>
+    <string name="reader_password_required">이 PDF는 암호화되어 있습니다. 비밀번호를 입력하세요.</string>
+    <string name="reader_password_hint">PDF 비밀번호</string>
+    <string name="reader_password_unlock">잠금 해제</string>
+
+    <string name="pdfedit_title">PDF 편집</string>
+    <string name="pdfedit_merge">병합</string>
+    <string name="pdfedit_split">분할</string>
+    <string name="pdfedit_rotate">회전</string>
+    <string name="pdfedit_delete_pages">페이지 삭제</string>
+    <string name="pdfedit_reorder">순서 변경</string>
+    <string name="pdfedit_encrypt">암호화</string>
+    <string name="pdfedit_decrypt">복호화</string>
+    <string name="pdfedit_watermark">워터마크</string>
+    <string name="pdfedit_to_jpg">JPG로</string>
+    <string name="pdfedit_to_pdf">이미지를 PDF로</string>
+    <string name="pdfedit_pages_selected">%1$d 페이지 선택됨</string>
+    <string name="pdfedit_split_range">범위</string>
+    <string name="pdfedit_split_each">각 페이지를 별도 파일로</string>
+    <string name="pdfedit_split_custom">범위 지정 (예: 1-3,5,7-9)</string>
+    <string name="pdfedit_output_name">출력 파일명</string>
+
+    <string name="tools_title">도구</string>
+    <string name="tools_merge">PDF 병합</string>
+    <string name="tools_split">PDF 분할</string>
+    <string name="tools_jpg_to_pdf">이미지를 PDF로</string>
+    <string name="tools_pdf_to_jpg">PDF를 JPG로</string>
+    <string name="tools_link_to_pdf">링크를 PDF로</string>
+    <string name="tools_encrypt">PDF 암호화</string>
+    <string name="tools_decrypt">PDF 복호화</string>
+    <string name="tools_watermark">워터마크 추가</string>
+    <string name="tools_pick_files">파일 선택</string>
+    <string name="tools_pick_images">이미지 선택</string>
+
+    <string name="link_title">링크 → PDF</string>
+    <string name="link_input_hint">https URL 붙여넣기</string>
+    <string name="link_go">변환</string>
+    <string name="link_history">최근 링크</string>
+    <string name="link_loading">로딩 중…</string>
+    <string name="link_render_done">렌더링 완료</string>
+    <string name="link_capture_full">페이지 전체</string>
+    <string name="link_capture_area">영역 지정</string>
+    <string name="link_internet_required">이 기능은 네트워크 액세스가 필요합니다. 시스템 설정에서 인터넷 권한을 부여하세요.</string>
+    <string name="link_only_static">정적 페이지에 최적화되어 있습니다. 동적 페이지는 완전히 렌더링되지 않을 수 있습니다.</string>
+    <string name="link_invalid_url">잘못된 URL 형식입니다 (https:// 로 시작해야 함)</string>
+    <string name="link_load_failed">로드 실패: %1$s</string>
+    <string name="link_capture_saved">PDF로 저장됨</string>
+    <string name="link_no_history">기록 없음</string>
+    <string name="link_clear_history">기록 삭제</string>
+    <string name="link_progress_loading">로딩 %1$d%%</string>
+    <string name="link_progress_capture">캡처 중…</string>
+
+    <string name="settings_title">설정</string>
+    <string name="settings_section_appearance">외관</string>
+    <string name="settings_section_scan">스캔</string>
+    <string name="settings_section_ocr">OCR</string>
+    <string name="settings_section_data">데이터</string>
+    <string name="settings_section_about">정보</string>
+
+    <string name="settings_language">언어</string>
+    <string name="settings_language_system">시스템 기본값</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+
+    <string name="settings_theme">테마</string>
+    <string name="settings_theme_system">시스템 기본값</string>
+    <string name="settings_theme_light">라이트</string>
+    <string name="settings_theme_dark">다크</string>
+
+    <string name="settings_default_filter">기본 필터</string>
+    <string name="settings_ocr_languages">OCR 언어</string>
+    <string name="settings_ocr_languages_hint">%1$d개 선택됨</string>
+    <string name="settings_ocr_lang_zh">중국어</string>
+    <string name="settings_ocr_lang_en">영어</string>
+    <string name="settings_ocr_lang_ja">일본어</string>
+    <string name="settings_ocr_lang_ko">한국어</string>
+
+    <string name="settings_clear_cache">캐시 삭제</string>
+    <string name="settings_clear_cache_done">%1$s 삭제됨</string>
+
+    <string name="settings_clear_data">모든 데이터 삭제</string>
+    <string name="settings_clear_data_warning">모든 문서, 태그, 설정이 삭제됩니다. 되돌릴 수 없습니다.</string>
+    <string name="settings_clear_data_confirm">삭제</string>
+
+    <string name="settings_about">정보</string>
+    <string name="settings_about_version">버전</string>
+    <string name="settings_about_privacy">이 앱은 데이터를 수집하지 않습니다</string>
+    <string name="settings_about_oss">오픈소스 라이선스</string>
+    <string name="settings_export_logs">로컬 로그 내보내기</string>
+    <string name="settings_export_logs_done">로그 내보내기 완료</string>
+
+    <string name="error_generic">오류: %1$s</string>
+    <string name="error_file_not_found">파일을 찾을 수 없음</string>
+    <string name="error_pdf_corrupted">PDF 파일이 손상됨</string>
+    <string name="error_pdf_encrypted">PDF가 암호화됨</string>
+    <string name="error_pdf_encrypted_other">다른 비밀번호로 암호화된 PDF</string>
+    <string name="error_password_wrong">비밀번호가 틀림</string>
+    <string name="error_password_too_short">비밀번호는 6자 이상</string>
+    <string name="error_password_mismatch">비밀번호가 일치하지 않음</string>
+    <string name="error_camera_unavailable">카메라를 사용할 수 없음</string>
+    <string name="error_no_camera_permission">카메라 권한이 없음</string>
+    <string name="error_ocr_init_failed">OCR 초기화 실패</string>
+    <string name="error_ocr_no_text">인식된 텍스트 없음</string>
+    <string name="error_storage_full">저장 공간 부족</string>
+    <string name="error_unknown">알 수 없는 오류</string>
+    <string name="error_io">파일 I/O 실패</string>
+    <string name="error_unsupported_format">지원하지 않는 형식</string>
+    <string name="error_pdf_too_large">PDF 너무 큼 (&gt;200 페이지)</string>
+    <string name="error_image_load_failed">이미지 로드 실패</string>
+    <string name="error_opencv_init_failed">이미지 엔진 초기화 실패</string>
+
+    <string name="share_to_app">PDF 스캐너로 열기</string>
+    <string name="empty_value">비어 있음</string>
+    <string name="confirm_delete">삭제하시겠습니까?</string>
+    <string name="confirm_delete_message">"%1$s"이(가) 영구적으로 삭제됩니다.</string>
+    <string name="saved">저장됨</string>
+    <string name="shared">공유됨</string>
+    <string name="copied_to_clipboard">클립보드에 복사됨</string>
+    <string name="multi_selected">%1$d개 선택됨</string>
+    <string name="not_implemented">v0.1에서 구현되지 않음</string>
+    <string name="untitled">제목 없음</string>
+    <string name="default_scan_name">스캔_%1$s</string>
+    <string name="page_unit">페이지</string>
+    <string name="byte_unit">B</string>
+    <string name="kb_unit">KB</string>
+    <string name="mb_unit">MB</string>
+    <string name="gb_unit">GB</string>
+    <string name="file_size_format">%1$s %2$s</string>
+</resources>

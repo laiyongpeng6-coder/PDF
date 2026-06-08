@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    默认 strings：简体中文（与 values-zh-rCN 完全相同，作为兜底）
+    所有需要翻译的字符串都集中在这里
+-->
+<resources>
+    <string name="app_name">PDF 极扫</string>
+    <string name="app_subtitle">本地离线 PDF 工具</string>
+
+    <!-- Common -->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="share">分享</string>
+    <string name="delete">删除</string>
+    <string name="rename">重命名</string>
+    <string name="search">搜索</string>
+    <string name="settings">设置</string>
+    <string name="back">返回</string>
+    <string name="loading">加载中…</string>
+    <string name="retry">重试</string>
+    <string name="more">更多</string>
+    <string name="open">打开</string>
+    <string name="confirm">确认</string>
+    <string name="select_all">全选</string>
+    <string name="deselect_all">取消全选</string>
+
+    <!-- Permissions -->
+    <string name="permission_camera_title">需要相机权限</string>
+    <string name="permission_camera_message">拍照扫描需要相机权限。授权后即可使用扫描功能。</string>
+    <string name="permission_storage_title">需要存储权限</string>
+    <string name="permission_storage_message">从相册导入文件需要存储权限。</string>
+    <string name="permission_grant">去授权</string>
+
+    <!-- Home -->
+    <string name="home_title">文档</string>
+    <string name="home_empty">还没有文档\n点扫描按钮开始</string>
+    <string name="home_fab_scan">扫描</string>
+    <string name="home_fab_link">链接</string>
+    <string name="home_fab_import">导入</string>
+    <string name="home_search_hint">搜索文件名 / 标签 / 内容</string>
+    <string name="home_sort_by_date">按日期排序</string>
+    <string name="home_sort_by_name">按名称排序</string>
+    <string name="home_filter_all">全部</string>
+    <string name="home_filter_tag">标签</string>
+    <string name="home_filter_folder">文件夹</string>
+    <string name="home_count">共 %1$d 份</string>
+
+    <!-- Camera -->
+    <string name="camera_title">扫描</string>
+    <string name="camera_capture">拍照</string>
+    <string name="camera_flash_auto">自动闪光</string>
+    <string name="camera_flash_on">开启闪光</string>
+    <string name="camera_flash_off">关闭闪光</string>
+    <string name="camera_filter_original">原图</string>
+    <string name="camera_filter_enhanced">增强</string>
+    <string name="camera_filter_grayscale">灰度</string>
+    <string name="camera_filter_bw">黑白</string>
+    <string name="camera_scene_document">文档</string>
+    <string name="camera_scene_idcard">证件</string>
+    <string name="camera_scene_whiteboard">白板</string>
+    <string name="camera_done">完成</string>
+    <string name="camera_reshoot">重拍</string>
+    <string name="camera_pages_count">已拍 %1$d 页</string>
+    <string name="camera_grid">参考线</string>
+    <string name="camera_hint">将文档放在取景框内，自动识别边缘</string>
+
+    <!-- Editor -->
+    <string name="editor_title">编辑</string>
+    <string name="editor_save_pdf">保存为 PDF</string>
+    <string name="editor_save_jpg">保存为 JPG</string>
+    <string name="editor_rotate">旋转</string>
+    <string name="editor_delete">删除</string>
+    <string name="editor_crop">裁剪</string>
+    <string name="editor_filter">滤镜</string>
+    <string name="editor_reorder">调整顺序</string>
+    <string name="editor_name_hint">文件名</string>
+    <string name="editor_tags_hint">标签（多个用空格分隔）</string>
+    <string name="editor_ocr">扫描后识别文字（可搜索）</string>
+    <string name="editor_ocr_languages">识别语言：%1$s</string>
+    <string name="editor_encrypt">加密 PDF</string>
+    <string name="editor_watermark">加水印</string>
+    <string name="editor_password_hint">密码（至少 6 位）</string>
+    <string name="editor_password_confirm_hint">再次输入密码</string>
+    <string name="editor_watermark_text">水印文字</string>
+    <string name="editor_watermark_image">水印图片</string>
+    <string name="editor_watermark_opacity">透明度：%1$d%%</string>
+    <string name="editor_watermark_size">字号：%1$d sp</string>
+    <string name="editor_watermark_rotation">旋转：%1$d°</string>
+    <string name="editor_watermark_tile">平铺</string>
+    <string name="editor_saving">正在生成 PDF…</string>
+    <string name="editor_saved">已保存到本地</string>
+    <string name="editor_processing">正在处理第 %1$d / %2$d 页</string>
+
+    <!-- Reader -->
+    <string name="reader_title">阅读</string>
+    <string name="reader_search_hint">在文档中搜索</string>
+    <string name="reader_no_results">未找到匹配内容</string>
+    <string name="reader_page">第 %1$d / %2$d 页</string>
+    <string name="reader_highlight">高亮</string>
+    <string name="reader_scribble">涂鸦</string>
+    <string name="reader_signature">签名</string>
+    <string name="reader_night_mode">夜间模式</string>
+    <string name="reader_day_mode">日间模式</string>
+    <string name="reader_undo">撤销</string>
+    <string name="reader_clear">清除</string>
+    <string name="reader_save_annotations">保存标注</string>
+    <string name="reader_annotations_saved">标注已保存</string>
+    <string name="reader_jump_page">跳转</string>
+    <string name="reader_jump_to_page">跳转到第</string>
+    <string name="reader_password_required">该 PDF 已加密，请输入密码</string>
+    <string name="reader_password_hint">PDF 密码</string>
+    <string name="reader_password_unlock">解锁</string>
+
+    <!-- PDF edit -->
+    <string name="pdfedit_title">PDF 编辑</string>
+    <string name="pdfedit_merge">合并</string>
+    <string name="pdfedit_split">拆分</string>
+    <string name="pdfedit_rotate">旋转</string>
+    <string name="pdfedit_delete_pages">删页</string>
+    <string name="pdfedit_reorder">调序</string>
+    <string name="pdfedit_encrypt">加密</string>
+    <string name="pdfedit_decrypt">解密</string>
+    <string name="pdfedit_watermark">水印</string>
+    <string name="pdfedit_to_jpg">转 JPG</string>
+    <string name="pdfedit_to_pdf">多图转 PDF</string>
+    <string name="pdfedit_pages_selected">已选 %1$d 页</string>
+    <string name="pdfedit_split_range">拆分范围</string>
+    <string name="pdfedit_split_each">每页拆为单独文件</string>
+    <string name="pdfedit_split_custom">自定义范围（如 1-3,5,7-9）</string>
+    <string name="pdfedit_output_name">输出文件名</string>
+
+    <!-- Tools -->
+    <string name="tools_title">工具</string>
+    <string name="tools_merge">PDF 合并</string>
+    <string name="tools_split">PDF 拆分</string>
+    <string name="tools_jpg_to_pdf">图片转 PDF</string>
+    <string name="tools_pdf_to_jpg">PDF 转 JPG</string>
+    <string name="tools_link_to_pdf">链接转 PDF</string>
+    <string name="tools_encrypt">PDF 加密</string>
+    <string name="tools_decrypt">PDF 解密</string>
+    <string name="tools_watermark">添加水印</string>
+    <string name="tools_pick_files">选择文件</string>
+    <string name="tools_pick_images">选择图片</string>
+
+    <!-- Link to PDF -->
+    <string name="link_title">链接转 PDF</string>
+    <string name="link_input_hint">粘贴或输入 https 链接</string>
+    <string name="link_go">转换</string>
+    <string name="link_history">最近链接</string>
+    <string name="link_loading">正在加载…</string>
+    <string name="link_render_done">渲染完成</string>
+    <string name="link_capture_full">截取整页</string>
+    <string name="link_capture_area">选区域截取</string>
+    <string name="link_internet_required">此功能需要联网，请在系统设置中临时授予本应用联网权限。</string>
+    <string name="link_only_static">仅保证静态页面的最佳效果，复杂动态页面可能不完整。</string>
+    <string name="link_invalid_url">链接格式不正确，请输入 https:// 开头的网址</string>
+    <string name="link_load_failed">页面加载失败：%1$s</string>
+    <string name="link_capture_saved">已保存为 PDF</string>
+    <string name="link_no_history">暂无历史</string>
+    <string name="link_clear_history">清空历史</string>
+    <string name="link_progress_loading">加载中 %1$d%%</string>
+    <string name="link_progress_capture">截图中…</string>
+
+    <!-- Settings -->
+    <string name="settings_title">设置</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_section_scan">扫描</string>
+    <string name="settings_section_ocr">OCR 识别</string>
+    <string name="settings_section_data">数据</string>
+    <string name="settings_section_about">关于</string>
+
+    <string name="settings_language">语言</string>
+    <string name="settings_language_system">跟随系统</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_theme_dark">深色</string>
+
+    <string name="settings_default_filter">默认滤镜</string>
+    <string name="settings_ocr_languages">OCR 语言</string>
+    <string name="settings_ocr_languages_hint">已选 %1$d 种</string>
+    <string name="settings_ocr_lang_zh">中文</string>
+    <string name="settings_ocr_lang_en">英文</string>
+    <string name="settings_ocr_lang_ja">日文</string>
+    <string name="settings_ocr_lang_ko">韩文</string>
+
+    <string name="settings_clear_cache">清理缓存</string>
+    <string name="settings_clear_cache_done">已清理 %1$s</string>
+
+    <string name="settings_clear_data">清除全部数据</string>
+    <string name="settings_clear_data_warning">此操作将删除所有文档、标签、设置，且无法恢复。</string>
+    <string name="settings_clear_data_confirm">确认清除</string>
+
+    <string name="settings_about">关于</string>
+    <string name="settings_about_version">版本</string>
+    <string name="settings_about_privacy">本应用不收集任何数据</string>
+    <string name="settings_about_oss">开源许可</string>
+    <string name="settings_export_logs">导出本地日志</string>
+    <string name="settings_export_logs_done">日志已导出</string>
+
+    <!-- Errors -->
+    <string name="error_generic">出错了：%1$s</string>
+    <string name="error_file_not_found">文件不存在</string>
+    <string name="error_pdf_corrupted">PDF 文件已损坏</string>
+    <string name="error_pdf_encrypted">PDF 已加密</string>
+    <string name="error_pdf_encrypted_other">PDF 用其他密码加密，无法解密</string>
+    <string name="error_password_wrong">密码错误</string>
+    <string name="error_password_too_short">密码至少 6 位</string>
+    <string name="error_password_mismatch">两次输入的密码不一致</string>
+    <string name="error_camera_unavailable">相机不可用</string>
+    <string name="error_no_camera_permission">未授权相机</string>
+    <string name="error_ocr_init_failed">OCR 初始化失败</string>
+    <string name="error_ocr_no_text">未识别到文字</string>
+    <string name="error_storage_full">存储空间不足</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="error_io">读写文件失败</string>
+    <string name="error_unsupported_format">不支持的文件格式</string>
+    <string name="error_pdf_too_large">PDF 过大（>200 页）</string>
+    <string name="error_image_load_failed">图片加载失败</string>
+    <string name="error_opencv_init_failed">图像处理引擎初始化失败</string>
+
+    <!-- Misc -->
+    <string name="share_to_app">用 PDF 极扫 打开</string>
+    <string name="empty_value">空</string>
+    <string name="confirm_delete">确认删除？</string>
+    <string name="confirm_delete_message">"%1$s" 将被永久删除，无法恢复。</string>
+    <string name="saved">已保存</string>
+    <string name="shared">已分享</string>
+    <string name="copied_to_clipboard">已复制到剪贴板</string>
+    <string name="multi_selected">已选中 %1$d 项</string>
+    <string name="not_implemented">该功能在 v0.1 暂未实现</string>
+    <string name="untitled">未命名</string>
+    <string name="default_scan_name">扫描_%1$s</string>
+    <string name="page_unit">页</string>
+    <string name="byte_unit">B</string>
+    <string name="kb_unit">KB</string>
+    <string name="mb_unit">MB</string>
+    <string name="gb_unit">GB</string>
+    <string name="file_size_format">%1$s %2$s</string>
+</resources>
