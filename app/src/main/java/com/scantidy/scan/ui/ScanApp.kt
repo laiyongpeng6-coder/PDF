@@ -80,7 +80,12 @@ fun ScanApp() {
                     onEditDocument = { id -> navController.navigate(SubRoute.PdfEdit.build(id)) }
                 )
             }
-            composable(Destination.Tools.route) { ToolsScreen() }
+            composable(Destination.Tools.route) {
+                ToolsScreen(
+                    onScan = { navController.navigate(SubRoute.Camera.route) },
+                    onLink = { navController.navigate(SubRoute.LinkInput.route) }
+                )
+            }
             composable(Destination.Settings.route) { SettingsScreen() }
 
             // 子页面

@@ -1,6 +1,7 @@
 package com.scantidy.scan
 
 import android.app.Application
+import com.scantidy.scan.core.log.LocalLogTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 

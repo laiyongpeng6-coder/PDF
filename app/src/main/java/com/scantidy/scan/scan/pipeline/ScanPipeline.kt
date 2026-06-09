@@ -160,11 +160,22 @@ class ScanPipeline @Inject constructor(
     private fun readExifRotation(uri: Uri): Int {
         return try {
             context.contentResolver.openInputStream(uri).use { input ->
-                if (input == null) 0 else android.media.ExifInterface(input).rotationDegrees
+                if (input == null) 0
+                else android.media.ExifInterface(input).getAttributeInt(
+                    android.media.ExifInterface.TAG_ORIENTATION,
+                    android.media.ExifInterface.ORIENTATION_NORMAL
+                ).toExifRotationDegrees()
             }
         } catch (e: Throwable) {
             0
         }
+    }
+
+    private fun Int.toExifRotationDegrees(): Int = when (this) {
+        android.media.ExifInterface.ORIENTATION_ROTATE_90 -> 90
+        android.media.ExifInterface.ORIENTATION_ROTATE_180 -> 180
+        android.media.ExifInterface.ORIENTATION_ROTATE_270 -> 270
+        else -> 0
     }
 
     private fun rotateBitmap(src: Bitmap, degree: Int): Bitmap {

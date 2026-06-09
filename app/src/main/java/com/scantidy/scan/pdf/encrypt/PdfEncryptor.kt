@@ -54,10 +54,7 @@ class PdfEncryptor @Inject constructor() {
                 PdfCore.save(doc, output)
                 return@withDocument
             }
-            val success = doc.setAllSecurityToBeRemoved(true)
-            if (!success) {
-                throw SecurityException("Wrong password or cannot decrypt")
-            }
+            doc.setAllSecurityToBeRemoved(true)
             PdfCore.save(doc, output)
             Timber.i("Decrypted PDF: ${output.absolutePath}")
         }

@@ -3,7 +3,10 @@ package com.scantidy.scan.web.renderer
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.RectF
+import android.graphics.pdf.PdfDocument
 import android.os.Build
 import android.print.PrintAttributes
 import android.print.pdf.PrintedPdfDocument
@@ -48,6 +51,7 @@ class WebPageRenderer @Inject constructor(
         try {
             val bitmap = captureWholePage(webView, url)
             bitmapToPdf(bitmap, output)
+            output
         } finally {
             webView.destroy()
         }
@@ -112,23 +116,29 @@ class WebPageRenderer @Inject constructor(
         val bmp = Bitmap.createBitmap(1080, measuredH, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bmp)
         // 兜底：先涂白，避免透明背景
-        canvas.drawColor(android.graphics.Color.WHITE)
+        canvas.drawColor(Color.WHITE)
         view.draw(canvas)
         return bmp
     }
 
-    private fun bitmapToPdf(bitmap: Bitmap, output: File) {
+    private fun bitmapToPdf(bitmap: Bitmap, output: File): File {
         output.parentFile?.mkdirs()
         // A4 in points: 595 x 842
-        val pdfDoc = PrintedPdfDocument(context, PrintAttributes.Builder()
-            .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
-            .setResolution(PrintAttributes.Resolution("pdf", "pdf", 300, 300))
-            .setMinMargins(PrintAttributes.Margins.NO_MARGINS)
-            .build()
+        val pdfDoc = PrintedPdfDocument(
+            context,
+            PrintAttributes.Builder()
+                .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
+                .setResolution(PrintAttributes.Resolution("pdf", "pdf", 300, 300))
+                .setMinMargins(PrintAttributes.Margins.NO_MARGINS)
+                .build()
         )
-        val pageInfo = PdfPageInfoCompat.build(pdfDoc, bitmap.width, bitmap.height)
+        val pageInfo = PdfDocument.PageInfo.Builder(
+            PrintAttributes.MediaSize.ISO_A4.widthMils,
+            PrintAttributes.MediaSize.ISO_A4.heightMils,
+            1
+        ).create()
         val page = pdfDoc.startPage(pageInfo)
-        val canvas = page.canvas
+        val canvas: Canvas = page.canvas
         // 把 bitmap 缩放到 A4 画布
         val pageW = pageInfo.pageWidth.toFloat()
         val pageH = pageInfo.pageHeight.toFloat()
@@ -140,25 +150,11 @@ class WebPageRenderer @Inject constructor(
         val offX = (pageW - drawW) / 2f
         val offY = (pageH - drawH) / 2f
         val paint = Paint(Paint.FILTER_BITMAP_FLAG)
-        canvas.drawBitmap(bitmap, null, android.graphics.RectF(offX, offY, offX + drawW, offY + drawH), paint)
+        canvas.drawBitmap(bitmap, null, RectF(offX, offY, offX + drawW, offY + drawH), paint)
         pdfDoc.finishPage(page)
         FileOutputStream(output).use { pdfDoc.writeTo(it) }
         pdfDoc.close()
         bitmap.recycle()
-    }
-}
-
-/**
- * 兼容 API 19+ 的 PdfPageInfo 构造
- * PrintedPdfDocument.PageInfo 在 API 23+ 才有
- */
-object PdfPageInfoCompat {
-    fun build(doc: PrintedPdfDocument, bitmapW: Int, bitmapH: Int): android.print.PageInfo {
-        val a4 = android.print.PrintAttributes.MediaSize.ISO_A4
-        val widthMils = a4.widthMils
-        val heightMils = a4.heightMils
-        return android.print.PageInfo.Builder(widthMils, heightMils, 300)
-            .setContentDescription("webpage")
-            .create()
+        return output
     }
 }

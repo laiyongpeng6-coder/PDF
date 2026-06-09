@@ -14,6 +14,7 @@ import com.scantidy.scan.scan.ocr.OcrLanguage
 import com.scantidy.scan.scan.pipeline.ScanPipeline
 import com.scantidy.scan.scan.pipeline.ScanResult
 import com.scantidy.scan.scan.pipeline.ScanSaveOptions
+import com.scantidy.scan.scan.pipeline.DraftStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +33,8 @@ class EditorViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val scanPipeline: ScanPipeline,
     private val pdfFromImages: PdfFromImages,
-    private val repo: DocumentRepository
+    private val repo: DocumentRepository,
+    private val draftStore: DraftStore
 ) : ViewModel() {
 
     data class UiState(
@@ -57,13 +59,15 @@ class EditorViewModel @Inject constructor(
 
     fun init(draftId: String, capturedUris: List<Uri>) {
         if (_state.value.draftId == draftId && _state.value.processed != null) return
+        // 优先用参数传入的 URIs，否则从 DraftStore 读取
+        val uris = if (capturedUris.isNotEmpty()) capturedUris else draftStore.take(draftId)
         val now = System.currentTimeMillis()
         _state.value = UiState(
             draftId = draftId,
             fileName = "${context.getString(com.scantidy.scan.R.string.default_scan_name)}_${TimeFormat.forFileName(now)}"
         )
-        if (capturedUris.isNotEmpty()) {
-            processUris(capturedUris)
+        if (uris.isNotEmpty()) {
+            processUris(uris)
         }
     }
 

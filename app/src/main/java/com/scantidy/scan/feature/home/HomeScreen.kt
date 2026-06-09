@@ -87,6 +87,7 @@ fun HomeScreen(
     val snackbarHostState = remember { SnackbarHostState() }
 
     var deleteCandidate by remember { mutableStateOf<Document?>(null) }
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     Scaffold(
         topBar = {
@@ -177,7 +178,7 @@ fun HomeScreen(
                             doc = doc,
                             onClick = { onOpenDocument(doc.id) },
                             onLongClick = { deleteCandidate = doc },
-                            onShare = { ShareHelper.shareDocument(doc, context = androidx.compose.ui.platform.LocalContext.current) },
+                            onShare = { ShareHelper.shareDocument(doc, context = context) },
                             onEdit = { onEditDocument(doc.id) }
                         )
                     }

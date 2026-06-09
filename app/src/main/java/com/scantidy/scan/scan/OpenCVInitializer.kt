@@ -19,8 +19,8 @@ class OpenCVInitializer @Inject constructor() {
     @Synchronized
     fun ensureLoaded(context: Context): Boolean {
         if (loaded) return true
-        val ok = OpenCVLoader.initLocal()
-        Timber.i("OpenCV initLocal = $ok")
+        val ok = OpenCVLoader.initDebug()
+        Timber.i("OpenCV initDebug = $ok")
         if (ok) loaded = true
         return ok
     }

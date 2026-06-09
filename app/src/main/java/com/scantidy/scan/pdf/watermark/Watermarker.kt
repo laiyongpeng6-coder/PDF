@@ -1,21 +1,20 @@
 package com.scantidy.scan.pdf.watermark
 
+import android.graphics.BitmapFactory
 import com.scantidy.scan.pdf.core.PdfCore
 import com.tom_roush.pdfbox.pdmodel.PDDocument
 import com.tom_roush.pdfbox.pdmodel.PDPage
 import com.tom_roush.pdfbox.pdmodel.PDPageContentStream
 import com.tom_roush.pdfbox.pdmodel.font.PDFont
 import com.tom_roush.pdfbox.pdmodel.font.PDType1Font
-import com.tom_roush.pdfbox.pdmodel.font.Standard14Fonts
+import com.tom_roush.pdfbox.pdmodel.graphics.image.LosslessFactory
+import com.tom_roush.pdfbox.pdmodel.graphics.image.PDImageXObject
 import com.tom_roush.pdfbox.pdmodel.graphics.state.PDExtendedGraphicsState
+import com.tom_roush.pdfbox.util.Matrix
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory
-import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject
 import timber.log.Timber
-import java.awt.image.BufferedImage
 import java.io.File
-import javax.imageio.ImageIO
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.math.cos
@@ -69,7 +68,7 @@ class Watermarker @Inject constructor() {
         gs.nonStrokingAlphaConstant = config.opacity
         cs.setGraphicsStateParameters(gs)
 
-        val font: PDFont = PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD)
+        val font: PDFont = PDType1Font.HELVETICA_BOLD
         val fontSize = config.fontSize
         val text = config.text
         val textWidth = font.getStringWidth(text) / 1000f * fontSize
@@ -119,7 +118,7 @@ class Watermarker @Inject constructor() {
         cs.beginText()
         // text matrix = [a, b, c, d, e, f] = [cos, sin, -sin, cos, x, y]
         // PDF text origin 是 baseline
-        cs.setTextMatrix(org.apache.pdfbox.util.Matrix(
+        cs.setTextMatrix(Matrix(
             cosR, sinR, -sinR, cosR, x, y
         ))
         cs.setFont(font, fontSize)
@@ -135,7 +134,7 @@ class Watermarker @Inject constructor() {
         config: WatermarkConfig
     ) {
         val imageFile = config.imageFile ?: return
-        val image: BufferedImage = ImageIO.read(imageFile) ?: return
+        val image = BitmapFactory.decodeFile(imageFile.absolutePath) ?: return
         val pdImage: PDImageXObject = LosslessFactory.createFromImage(doc, image)
         val box = page.mediaBox
         val pageW = box.width
@@ -150,5 +149,6 @@ class Watermarker @Inject constructor() {
         val cx = (pageW - targetW) / 2f
         val cy = (pageH - targetH) / 2f
         cs.drawImage(pdImage, cx, cy, targetW, targetH)
+        image.recycle()
     }
 }

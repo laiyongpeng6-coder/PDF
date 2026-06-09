@@ -8,13 +8,6 @@
         <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
-        <item name="splashScreenBackground" tools:targetApi="s">@color/seed_primary</item>
-    </style>
-
-    <!-- Splash theme for API 31+ -->
-    <style name="Theme.PDFScannerSaver.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/seed_primary</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
-        <item name="postSplashScreenTheme">@style/Theme.PDFScannerSaver</item>
+        <item name="android:windowBackground">@color/seed_primary</item>
     </style>
 </resources>

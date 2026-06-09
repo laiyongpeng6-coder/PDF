@@ -1,15 +1,15 @@
 package com.scantidy.scan.pdf.convert
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import com.scantidy.scan.pdf.core.PdfCore
 import com.tom_roush.pdfbox.pdmodel.PDPage
-import com.tom_roush.pdfbox.rendering.ImageType
 import com.tom_roush.pdfbox.rendering.PDFRenderer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import java.awt.image.BufferedImage
 import java.io.File
-import javax.imageio.ImageIO
+import java.io.FileOutputStream
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -36,14 +36,17 @@ class PdfJpgConverter @Inject constructor() {
         val outFiles = mutableListOf<File>()
         PdfCore.withDocument(input) { doc ->
             val renderer = PDFRenderer(doc)
-            renderer.setImageType(ImageType.RGB)
             val count = doc.documentCatalog.pages.count
             for (i in 0 until count) {
                 val page = doc.documentCatalog.pages[i] as PDPage
-                val image: BufferedImage = renderer.renderImageWithDPI(i, dpi.toFloat())
+                val image: Bitmap = renderer.renderImageWithDPI(i, dpi.toFloat())
                 val ext = if (format.equals("png", ignoreCase = true)) "png" else "jpg"
                 val out = File(outputDir, "${baseName}_${i + 1}.$ext")
-                ImageIO.write(image, ext, out)
+                FileOutputStream(out).use { fos ->
+                    val compressFormat = if (ext == "png") Bitmap.CompressFormat.PNG else Bitmap.CompressFormat.JPEG
+                    image.compress(compressFormat, 90, fos)
+                }
+                image.recycle()
                 outFiles.add(out)
             }
         }
@@ -66,7 +69,7 @@ class PdfJpgConverter @Inject constructor() {
                     Timber.w("skip missing image: ${imageFile.absolutePath}")
                     continue
                 }
-                val image = ImageIO.read(imageFile) ?: continue
+                val image = BitmapFactory.decodeFile(imageFile.absolutePath) ?: continue
                 val pdImage = com.tom_roush.pdfbox.pdmodel.graphics.image.LosslessFactory.createFromImage(doc, image)
                 val page = com.tom_roush.pdfbox.pdmodel.PDPage(
                     com.tom_roush.pdfbox.pdmodel.common.PDRectangle(
@@ -78,6 +81,7 @@ class PdfJpgConverter @Inject constructor() {
                 com.tom_roush.pdfbox.pdmodel.PDPageContentStream(doc, page).use { cs ->
                     cs.drawImage(pdImage, 0f, 0f, pdImage.width.toFloat(), pdImage.height.toFloat())
                 }
+                image.recycle()
             }
             PdfCore.save(doc, output)
         }

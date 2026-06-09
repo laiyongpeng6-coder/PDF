@@ -97,11 +97,11 @@ class DocumentDetector @Inject constructor() {
 
         // 膨胀 + 腐蚀，让断裂的边缘连起来
         val kernel = org.opencv.imgproc.Imgproc.getStructuringElement(
-            org.opencv.imgproc.MorphTypes.MORPH_RECT,
+            org.opencv.imgproc.Imgproc.MORPH_RECT,
             org.opencv.core.Size(5.0, 5.0)
         )
         val closed = org.opencv.core.Mat()
-        org.opencv.imgproc.Imgproc.morphologyEx(edged, closed, org.opencv.imgproc.MorphTypes.MORPH_CLOSE, kernel)
+        org.opencv.imgproc.Imgproc.morphologyEx(edged, closed, org.opencv.imgproc.Imgproc.MORPH_CLOSE, kernel)
 
         val contours = mutableListOf<MatOfPoint>()
         val hierarchy = org.opencv.core.Mat()
@@ -109,8 +109,8 @@ class DocumentDetector @Inject constructor() {
             closed,
             contours,
             hierarchy,
-            org.opencv.imgproc.RetrType.RETR_EXTERNAL,
-            org.opencv.imgproc.ChainApproxMethod.CHAIN_APPROX_SIMPLE
+            org.opencv.imgproc.Imgproc.RETR_EXTERNAL,
+            org.opencv.imgproc.Imgproc.CHAIN_APPROX_SIMPLE
         )
 
         if (contours.isEmpty()) {

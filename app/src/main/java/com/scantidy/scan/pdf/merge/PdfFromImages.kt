@@ -1,23 +1,20 @@
 package com.scantidy.scan.pdf.merge
 
+import android.graphics.BitmapFactory
 import com.scantidy.scan.pdf.core.PdfCore
 import com.scantidy.scan.scan.pipeline.PdfPageInput
 import com.tom_roush.pdfbox.pdmodel.PDDocument
 import com.tom_roush.pdfbox.pdmodel.PDPage
 import com.tom_roush.pdfbox.pdmodel.PDPageContentStream
 import com.tom_roush.pdfbox.pdmodel.common.PDRectangle
+import com.tom_roush.pdfbox.pdmodel.font.PDFont
+import com.tom_roush.pdfbox.pdmodel.font.PDType1Font
 import com.tom_roush.pdfbox.pdmodel.graphics.image.LosslessFactory
 import com.tom_roush.pdfbox.pdmodel.graphics.image.PDImageXObject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.apache.pdfbox.pdmodel.font.PDFont
-import org.apache.pdfbox.pdmodel.font.PDType1Font
-import org.apache.pdfbox.pdmodel.font.Standard14Fonts
 import timber.log.Timber
-import java.awt.image.BufferedImage
 import java.io.File
-import java.io.IOException
-import javax.imageio.ImageIO
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -60,7 +57,7 @@ class PdfFromImages @Inject constructor() {
                     Timber.w("Image not found, skip: ${input.imagePath}")
                     continue
                 }
-                val rawImage: BufferedImage = ImageIO.read(imageFile) ?: continue
+                val rawImage = BitmapFactory.decodeFile(imageFile.absolutePath) ?: continue
 
                 val pdImage: PDImageXObject = LosslessFactory.createFromImage(doc, rawImage)
                 val (drawW, drawH) = fitInto(pdImage.width, pdImage.height, usableW, usableH)
@@ -74,6 +71,7 @@ class PdfFromImages @Inject constructor() {
                 if (textLayerEnabled && !input.ocrText.isNullOrBlank()) {
                     writeTextLayer(doc, page, input.ocrText, pageW, pageH, margin, drawW, drawH, offsetX, offsetY)
                 }
+                rawImage.recycle()
             }
             PdfCore.save(doc, output)
         }
@@ -91,7 +89,7 @@ class PdfFromImages @Inject constructor() {
         // 真实项目应该按 OCR bounding box 还原，这里取平均行
         val lines = text.lines().filter { it.isNotBlank() }
         if (lines.isEmpty()) return
-        val font: PDFont = PDType1Font(Standard14Fonts.FontName.HELVETICA)
+        val font: PDFont = PDType1Font.HELVETICA
         val fontSize = (drawH * 0.012f).coerceIn(4f, 10f)
         val lineHeight = fontSize * 1.3f
 

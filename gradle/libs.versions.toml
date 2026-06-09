@@ -1,8 +1,8 @@
 [versions]
 # Build
-agp = "9.2.1"
-kotlin = "2.2.10"
-ksp = "2.2.10-1.0.27"
+agp = "8.7.3"
+kotlin = "2.0.21"
+ksp = "2.0.21-1.0.28"
 
 # AndroidX core
 coreKtx = "1.13.1"
@@ -19,6 +19,7 @@ materialIcons = "1.7.5"
 # DI
 hilt = "2.52"
 hiltNavigationCompose = "1.2.0"
+material = "1.12.0"
 
 # Database
 room = "2.6.1"
@@ -76,6 +77,9 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
+# Material Components (for Theme.Material3.DayNight.* styles in themes.xml)
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
 # Room
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
@@ -111,7 +115,6 @@ timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "tim
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
-androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

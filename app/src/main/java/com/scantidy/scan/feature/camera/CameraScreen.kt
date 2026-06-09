@@ -172,7 +172,7 @@ fun CameraScreen(
                     )
 
                     IconButton(
-                        onClick = { onContinue(state.draftId) },
+                        onClick = { viewModel.continueToEditor(onContinue) },
                         enabled = state.capturedPageUris.isNotEmpty(),
                         colors = IconButtonDefaults.iconButtonColors(
                             contentColor = Color.White,

@@ -15,13 +15,13 @@ import java.io.File
  */
 object PdfCore {
 
-    suspend fun <T> withDocument(file: File, block: (PDDocument) -> T): T = withContext(Dispatchers.IO) {
+    suspend fun <T> withDocument(file: File, block: suspend (PDDocument) -> T): T = withContext(Dispatchers.IO) {
         PDDocument.load(file).use { doc ->
             block(doc)
         }
     }
 
-    suspend fun <T> withNewDocument(block: (PDDocument) -> T): T = withContext(Dispatchers.IO) {
+    suspend fun <T> withNewDocument(block: suspend (PDDocument) -> T): T = withContext(Dispatchers.IO) {
         PDDocument().use { doc ->
             block(doc)
         }

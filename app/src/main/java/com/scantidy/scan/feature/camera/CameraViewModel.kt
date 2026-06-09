@@ -3,6 +3,7 @@ package com.scantidy.scan.feature.camera
 import androidx.lifecycle.ViewModel
 import com.scantidy.scan.scan.OpenCVInitializer
 import com.scantidy.scan.scan.filter.FilterMode
+import com.scantidy.scan.scan.pipeline.DraftStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +12,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CameraViewModel @Inject constructor(
-    val openCvInitializer: OpenCVInitializer
+    val openCvInitializer: OpenCVInitializer,
+    private val draftStore: DraftStore
 ) : ViewModel() {
 
     data class UiState(
@@ -46,5 +48,16 @@ class CameraViewModel @Inject constructor(
 
     fun clearAll() {
         _state.value = UiState()
+    }
+
+    /**
+     * 继续到编辑页：把已拍 URI 存入 DraftStore，再回调
+     */
+    fun continueToEditor(onContinue: (draftId: String) -> Unit) {
+        val s = _state.value
+        if (s.capturedPageUris.isNotEmpty() && s.draftId.isNotEmpty()) {
+            draftStore.save(s.draftId, s.capturedPageUris)
+        }
+        onContinue(s.draftId)
     }
 }
