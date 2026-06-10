@@ -228,4 +228,17 @@
     <string name="mb_unit">MB</string>
     <string name="gb_unit">GB</string>
     <string name="file_size_format">%1$s %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">건너뛰기</string>
+    <string name="onboarding_next">다음</string>
+    <string name="onboarding_start">시작하기</string>
+    <string name="onboarding_scan_title">사진 스캔</string>
+    <string name="onboarding_scan_desc">촬영만 하면 AI가 문서 가장자리를 자동 감지하고 보정합니다</string>
+    <string name="onboarding_privacy_title">개인정보 보호</string>
+    <string name="onboarding_privacy_desc">완전 오프라인 작동. 모든 파일은 기기에만 저장되며 외부로 전송되지 않습니다</string>
+    <string name="onboarding_tools_title">올인원 도구</string>
+    <string name="onboarding_tools_desc">PDF 병합, 분할, 암호화, 워터마크, 형식 변환까지 하나의 앱으로</string>
+    <string name="onboarding_manage_title">스마트 관리</string>
+    <string name="onboarding_manage_desc">태그, 전문 검색, 빠른 미리보기로 모든 문서를 효율적으로 관리하세요</string>
 </resources>

@@ -228,4 +228,17 @@
     <string name="mb_unit">MB</string>
     <string name="gb_unit">GB</string>
     <string name="file_size_format">%1$s %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">スキップ</string>
+    <string name="onboarding_next">次へ</string>
+    <string name="onboarding_start">はじめる</string>
+    <string name="onboarding_scan_title">撮影スキャン</string>
+    <string name="onboarding_scan_desc">撮影するだけ。AIが自動でエッジを検出し、傾き補正を行います</string>
+    <string name="onboarding_privacy_title">プライバシー</string>
+    <string name="onboarding_privacy_desc">完全オフライン対応。すべてのデータは端末内に保存され、外部に送信されません</string>
+    <string name="onboarding_tools_title">多機能ツール</string>
+    <string name="onboarding_tools_desc">PDFの結合・分割、暗号化、透かし、フォーマット変換をひとつのアプリで</string>
+    <string name="onboarding_manage_title">スマート管理</string>
+    <string name="onboarding_manage_desc">タグ付け、全文検索、クイックプレビューで文書を効率的に整理</string>
 </resources>

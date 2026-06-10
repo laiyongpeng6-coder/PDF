@@ -228,4 +228,17 @@
     <string name="mb_unit">MB</string>
     <string name="gb_unit">GB</string>
     <string name="file_size_format">%1$s %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get Started</string>
+    <string name="onboarding_scan_title">Snap &amp; Scan</string>
+    <string name="onboarding_scan_desc">Point and shoot — intelligent edge detection auto-crops and straightens documents instantly</string>
+    <string name="onboarding_privacy_title">Privacy First</string>
+    <string name="onboarding_privacy_desc">100% offline. No internet needed. All files stay on your device — your data, your control</string>
+    <string name="onboarding_tools_title">All-in-One Toolkit</string>
+    <string name="onboarding_tools_desc">Merge, split, encrypt, watermark, and convert PDFs with ease. Everything you need in one app</string>
+    <string name="onboarding_manage_title">Smart Organization</string>
+    <string name="onboarding_manage_desc">Tags, full-text search, and quick preview — manage all your PDFs effortlessly</string>
 </resources>
