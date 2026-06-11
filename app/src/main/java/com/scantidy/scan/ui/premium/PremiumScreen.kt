@@ -28,6 +28,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.scantidy.scan.R
+import com.scantidy.scan.core.analytics.AnalyticsTracker
 import com.scantidy.scan.core.billing.PremiumFeature
 import com.scantidy.scan.core.billing.ProductCatalog
 import com.scantidy.scan.ui.theme.Primary
@@ -50,6 +51,7 @@ fun PremiumScreen(
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
+        AnalyticsTracker.logPremiumViewed()
         viewModel.refreshPurchases()
     }
 
@@ -155,6 +157,7 @@ fun PremiumScreen(
                         isRecommended = true,
                         isSelected = false,
                         onClick = {
+                            AnalyticsTracker.logPurchaseInitiated(ProductCatalog.ID_PREMIUM_YEARLY)
                             (context as? Activity)?.let {
                                 viewModel.launchPurchase(it, ProductCatalog.ID_PREMIUM_YEARLY)
                             }
@@ -175,6 +178,7 @@ fun PremiumScreen(
                         isRecommended = false,
                         isSelected = false,
                         onClick = {
+                            AnalyticsTracker.logPurchaseInitiated(ProductCatalog.ID_PREMIUM_MONTHLY)
                             (context as? Activity)?.let {
                                 viewModel.launchPurchase(it, ProductCatalog.ID_PREMIUM_MONTHLY)
                             }
@@ -195,6 +199,7 @@ fun PremiumScreen(
                         isRecommended = false,
                         isSelected = false,
                         onClick = {
+                            AnalyticsTracker.logPurchaseInitiated(ProductCatalog.ID_PREMIUM_UNLOCK)
                             (context as? Activity)?.let {
                                 viewModel.launchPurchase(it, ProductCatalog.ID_PREMIUM_UNLOCK)
                             }

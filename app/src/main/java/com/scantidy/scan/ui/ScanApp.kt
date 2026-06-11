@@ -7,6 +7,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -22,6 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.scantidy.scan.core.analytics.AnalyticsTracker
 import com.scantidy.scan.core.prefs.AppPreferences
 import com.scantidy.scan.feature.camera.CameraScreen
 import com.scantidy.scan.feature.home.HomeScreen
@@ -54,6 +56,11 @@ fun ScanApp() {
     val scope = rememberCoroutineScope()
     var phase by remember { mutableStateOf(AppPhase.SPLASH) }
 
+    // 闪屏展示埋点
+    LaunchedEffect(Unit) {
+        AnalyticsTracker.logSplashShown()
+    }
+
     when (phase) {
         AppPhase.SPLASH -> {
             SplashScreen(
@@ -62,14 +69,21 @@ fun ScanApp() {
                         val completed = withContext(Dispatchers.IO) {
                             AppPreferences.isOnboardingCompleted(context)
                         }
+                        if (!completed) {
+                            AnalyticsTracker.logFirstLaunch()
+                        }
                         phase = if (completed) AppPhase.MAIN else AppPhase.ONBOARDING
                     }
                 }
             )
         }
         AppPhase.ONBOARDING -> {
+            LaunchedEffect(Unit) {
+                AnalyticsTracker.logOnboardingStarted()
+            }
             OnboardingScreen(
                 onFinished = {
+                    AnalyticsTracker.logOnboardingCompleted()
                     scope.launch(Dispatchers.IO) {
                         AppPreferences.markOnboardingCompleted(context)
                     }

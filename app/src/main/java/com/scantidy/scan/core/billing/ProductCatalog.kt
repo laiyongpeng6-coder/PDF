@@ -4,14 +4,14 @@ package com.scantidy.scan.core.billing
  * Google Play 商品目录
  *
  * 需在 Google Play Console → 商品 → 应用内商品 中配置相同 ID：
- * - pdf_premium_unlock: 一次性商品 (inapp, non-consumable)
+ * - vip_premium_unlock: 一次性商品 (inapp, non-consumable)
  * - pdf_premium_monthly: 月度自动续期订阅 (auto-renewing sub)
  * - pdf_premium_yearly: 年度自动续期订阅 (auto-renewing sub)
  */
 object ProductCatalog {
 
     // --- 商品 ID ---
-    const val ID_PREMIUM_UNLOCK = "pdf_premium_unlock"
+    const val ID_PREMIUM_UNLOCK = "vip_premium_unlock"
     const val ID_PREMIUM_MONTHLY = "pdf_premium_monthly"
     const val ID_PREMIUM_YEARLY = "pdf_premium_yearly"
 
