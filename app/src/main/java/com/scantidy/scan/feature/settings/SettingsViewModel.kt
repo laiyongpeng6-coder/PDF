@@ -42,6 +42,18 @@ class SettingsViewModel @Inject constructor(
         it.copy(ocrLanguages = newSet)
     }
 
+    fun addOcrLanguage(lang: String) = _state.update {
+        val newSet = it.ocrLanguages.toMutableSet()
+        newSet.add(lang)
+        it.copy(ocrLanguages = newSet)
+    }
+
+    fun removeOcrLanguage(lang: String) = _state.update {
+        val newSet = it.ocrLanguages.toMutableSet()
+        newSet.remove(lang)
+        it.copy(ocrLanguages = newSet)
+    }
+
     fun refreshCount() {
         viewModelScope.launch {
             val c = repo.count()
