@@ -228,4 +228,38 @@
     <string name="mb_unit">MB</string>
     <string name="gb_unit">GB</string>
     <string name="file_size_format">%1$s %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get Started</string>
+    <string name="onboarding_scan_title">Snap &amp; Scan</string>
+    <string name="onboarding_scan_desc">Point and shoot — intelligent edge detection auto-crops and straightens documents instantly</string>
+    <string name="onboarding_privacy_title">Privacy First</string>
+    <string name="onboarding_privacy_desc">100% offline. No internet needed. All files stay on your device — your data, your control</string>
+    <string name="onboarding_tools_title">All-in-One Toolkit</string>
+    <string name="onboarding_tools_desc">Merge, split, encrypt, watermark, and convert PDFs with ease. Everything you need in one app</string>
+    <string name="onboarding_manage_title">Smart Organization</string>
+    <string name="onboarding_manage_desc">Tags, full-text search, and quick preview — manage all your PDFs effortlessly</string>
+
+    <!-- Premium / Billing -->
+    <string name="premium_upgrade">⭐ Upgrade to Premium</string>
+    <string name="premium_title">Premium</string>
+    <string name="premium_unlock_all">Unlock All Premium Features</string>
+    <string name="premium_tagline">Offline &amp; Secure · Ad-free · Lifetime Access</string>
+    <string name="premium_yearly">Yearly</string>
+    <string name="premium_monthly">Monthly</string>
+    <string name="premium_lifetime">Lifetime</string>
+    <string name="premium_period_yearly">Billed yearly. Cancel anytime.</string>
+    <string name="premium_period_monthly">Billed monthly. Cancel anytime.</string>
+    <string name="premium_period_lifetime">One-time payment. Lifetime access.</string>
+    <string name="premium_badge_popular">Most Popular</string>
+    <string name="premium_badge_value">Best Value</string>
+    <string name="premium_saving_hint">💡 Save 40% vs monthly</string>
+    <string name="premium_already">You are a premium member. All features unlocked!</string>
+    <string name="premium_purchase_success_title">🎉 Purchase Successful!</string>
+    <string name="premium_purchase_success_message">All premium features are now unlocked. Thank you for your support!</string>
+    <string name="premium_purchase_failed">Payment Failed</string>
+    <string name="premium_retry">Retry</string>
+    <string name="premium_start_use">Start Using</string>
 </resources>

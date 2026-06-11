@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196325432576",
+    "project_id": "pdfscan-d85b8",
+    "storage_bucket": "pdfscan-d85b8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196325432576:android:8bfa3bd135c160c65027e5",
+        "android_client_info": {
+          "package_name": "com.scantidy.scan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1uQiNu2y9rv8gAvu5lE2fgOHUbqLGATU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

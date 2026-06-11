@@ -7,8 +7,15 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -16,6 +23,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.scantidy.scan.core.analytics.AnalyticsTracker
+import com.scantidy.scan.core.prefs.AppPreferences
 import com.scantidy.scan.feature.camera.CameraScreen
 import com.scantidy.scan.feature.home.HomeScreen
 import com.scantidy.scan.feature.link.LinkInputScreen
@@ -27,12 +36,72 @@ import com.scantidy.scan.feature.tools.ToolsScreen
 import com.scantidy.scan.ui.nav.Destination
 import com.scantidy.scan.ui.nav.SubRoute
 import com.scantidy.scan.ui.nav.bottomTabs
+import com.scantidy.scan.ui.onboarding.OnboardingScreen
+import com.scantidy.scan.ui.onboarding.SplashScreen
+import com.scantidy.scan.ui.premium.PremiumScreen
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+/** 启动阶段 */
+private enum class AppPhase { SPLASH, ONBOARDING, MAIN }
 
 /**
- * App 顶层 Composable：底部 Tab + 子页面 NavHost
+ * App 顶层 Composable
+ * 闪屏（1.8s）→ 检测首次使用 → 新手引导 / 直接进主页
  */
 @Composable
 fun ScanApp() {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var phase by remember { mutableStateOf(AppPhase.SPLASH) }
+
+    // 闪屏展示埋点
+    LaunchedEffect(Unit) {
+        AnalyticsTracker.logSplashShown()
+    }
+
+    when (phase) {
+        AppPhase.SPLASH -> {
+            SplashScreen(
+                onFinished = {
+                    scope.launch {
+                        val completed = withContext(Dispatchers.IO) {
+                            AppPreferences.isOnboardingCompleted(context)
+                        }
+                        if (!completed) {
+                            AnalyticsTracker.logFirstLaunch()
+                        }
+                        phase = if (completed) AppPhase.MAIN else AppPhase.ONBOARDING
+                    }
+                }
+            )
+        }
+        AppPhase.ONBOARDING -> {
+            LaunchedEffect(Unit) {
+                AnalyticsTracker.logOnboardingStarted()
+            }
+            OnboardingScreen(
+                onFinished = {
+                    AnalyticsTracker.logOnboardingCompleted()
+                    scope.launch(Dispatchers.IO) {
+                        AppPreferences.markOnboardingCompleted(context)
+                    }
+                    phase = AppPhase.MAIN
+                }
+            )
+        }
+        AppPhase.MAIN -> {
+            MainApp()
+        }
+    }
+}
+
+/**
+ * 主页面：底部 Tab + 子页面导航
+ */
+@Composable
+private fun MainApp() {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
@@ -71,7 +140,6 @@ fun ScanApp() {
             startDestination = Destination.Home.route,
             modifier = Modifier.padding(padding)
         ) {
-            // 三个 Tab
             composable(Destination.Home.route) {
                 HomeScreen(
                     onScanClick = { navController.navigate(SubRoute.Camera.route) },
@@ -86,9 +154,12 @@ fun ScanApp() {
                     onLink = { navController.navigate(SubRoute.LinkInput.route) }
                 )
             }
-            composable(Destination.Settings.route) { SettingsScreen() }
+            composable(Destination.Settings.route) {
+                SettingsScreen(
+                    onPremiumClick = { navController.navigate(SubRoute.Premium.route) }
+                )
+            }
 
-            // 子页面
             composable(SubRoute.Camera.route) {
                 CameraScreen(
                     onBack = { navController.popBackStack() },
@@ -147,6 +218,9 @@ fun ScanApp() {
                     documentId = docId,
                     onBack = { navController.popBackStack() }
                 )
+            }
+            composable(SubRoute.Premium.route) {
+                PremiumScreen(onBack = { navController.popBackStack() })
             }
         }
     }

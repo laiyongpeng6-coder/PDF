@@ -243,4 +243,38 @@
     <string name="mb_unit">MB</string>
     <string name="gb_unit">GB</string>
     <string name="file_size_format">%1$s %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">跳过</string>
+    <string name="onboarding_next">下一步</string>
+    <string name="onboarding_start">开始使用</string>
+    <string name="onboarding_scan_title">拍照扫描</string>
+    <string name="onboarding_scan_desc">拍照即扫，智能识别文档边缘，自动裁剪矫正，快速输出清晰扫描件</string>
+    <string name="onboarding_privacy_title">隐私安全</string>
+    <string name="onboarding_privacy_desc">完全离线运行，无需联网。所有文档和数据仅保存在您的设备上，隐私无忧</string>
+    <string name="onboarding_tools_title">全能工具箱</string>
+    <string name="onboarding_tools_desc">PDF 合并拆分、加密解密、添加水印、格式转换，一应俱全</string>
+    <string name="onboarding_manage_title">高效管理</string>
+    <string name="onboarding_manage_desc">标签分类、全文搜索、快速预览，轻松打理所有 PDF 文档</string>
+
+    <!-- Premium / Billing -->
+    <string name="premium_upgrade">⭐ 升级高级版</string>
+    <string name="premium_title">高级版</string>
+    <string name="premium_unlock_all">解锁全部高级功能</string>
+    <string name="premium_tagline">离线安全 · 无广告 · 终生可用</string>
+    <string name="premium_yearly">年度会员</string>
+    <string name="premium_monthly">月度会员</string>
+    <string name="premium_lifetime">永久解锁</string>
+    <string name="premium_period_yearly">每年自动续期，可随时取消</string>
+    <string name="premium_period_monthly">每月自动续期，可随时取消</string>
+    <string name="premium_period_lifetime">一次付费，永久使用</string>
+    <string name="premium_badge_popular">最受欢迎</string>
+    <string name="premium_badge_value">最超值</string>
+    <string name="premium_saving_hint">💡 推荐 — 比月度省 40%</string>
+    <string name="premium_already">您已是高级会员，所有功能已解锁</string>
+    <string name="premium_purchase_success_title">🎉 购买成功！</string>
+    <string name="premium_purchase_success_message">所有高级功能已解锁，感谢支持！</string>
+    <string name="premium_purchase_failed">支付失败</string>
+    <string name="premium_retry">重试</string>
+    <string name="premium_start_use">开始使用</string>
 </resources>

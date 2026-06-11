@@ -47,4 +47,5 @@ sealed class SubRoute(val route: String) {
     data object PdfEdit : SubRoute("pdf-edit/{docId}") {
         fun build(docId: String) = "pdf-edit/$docId"
     }
+    data object Premium : SubRoute("premium")
 }
