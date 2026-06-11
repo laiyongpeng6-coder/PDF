@@ -122,7 +122,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
 
     // --- Play Billing ---
-    implementation(libs.billing.ktx)
+    implementation(libs.play.billing.ktx)
 
     // --- Room ---
     implementation(libs.androidx.room.runtime)
