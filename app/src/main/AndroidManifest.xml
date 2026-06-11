@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     PDF Scanner & Saver
-    硬约束：所有功能必须能在本地完成。
-    本 Manifest 故意不申请 INTERNET 权限（PRD 4.6.1）。
-    链接→PDF 在用户授予 INTERNET 权限时才能使用，UI 里给出明确提示。
+    商业化 v0.2：申请 INTERNET 权限以支持 Google Play Billing（应用内购买和订阅）。
+    核心扫描功能仍然完全离线；付费验证需要短暂联网。
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -17,6 +16,10 @@
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
 
+    <!-- Google Play Billing: required for in-app purchases & subscriptions -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- Read media on API 33+ / legacy storage on <=32 (for importing) -->
     <uses-permission
         android:name="android.permission.READ_MEDIA_IMAGES"
@@ -24,11 +27,6 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
-
-    <!--
-        故意不申请 INTERNET / WRITE_EXTERNAL_STORAGE / POST_NOTIFICATIONS。
-        见 docs/prd-v0.1.md §6 权限清单。
-    -->
 
     <application
         android:name=".ScanApp"

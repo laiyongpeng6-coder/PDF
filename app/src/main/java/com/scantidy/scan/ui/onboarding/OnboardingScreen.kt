@@ -1,12 +1,5 @@
 package com.scantidy.scan.ui.onboarding
 
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,8 +15,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.CameraAlt
+import androidx.compose.material.icons.outlined.FolderOpen
+import androidx.compose.material.icons.outlined.Handyman
+import androidx.compose.material.icons.outlined.Security
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -69,22 +66,22 @@ fun OnboardingScreen(
 ) {
     val pages = listOf(
         PageData(
-            icon = androidx.compose.material.icons.Icons.Outlined.CameraAlt,
+            icon = Icons.Outlined.CameraAlt,
             title = stringResource(R.string.onboarding_scan_title),
             description = stringResource(R.string.onboarding_scan_desc)
         ),
         PageData(
-            icon = androidx.compose.material.icons.Icons.Outlined.Security,
+            icon = Icons.Outlined.Security,
             title = stringResource(R.string.onboarding_privacy_title),
             description = stringResource(R.string.onboarding_privacy_desc)
         ),
         PageData(
-            icon = androidx.compose.material.icons.Icons.Outlined.Handyman,
+            icon = Icons.Outlined.Handyman,
             title = stringResource(R.string.onboarding_tools_title),
             description = stringResource(R.string.onboarding_tools_desc)
         ),
         PageData(
-            icon = androidx.compose.material.icons.Icons.Outlined.FolderOpen,
+            icon = Icons.Outlined.FolderOpen,
             title = stringResource(R.string.onboarding_manage_title),
             description = stringResource(R.string.onboarding_manage_desc)
         )
@@ -100,7 +97,7 @@ fun OnboardingScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // 顶部操作栏：跳过 + 页码
+        // 顶部操作栏：页码 + 跳过
         Row(
             modifier = Modifier
                 .fillMaxWidth()

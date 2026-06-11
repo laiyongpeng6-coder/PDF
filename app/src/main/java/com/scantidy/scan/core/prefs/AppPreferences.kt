@@ -4,7 +4,9 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.first
 
 /** 全局唯一的 DataStore 实例 */
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "app_prefs")
@@ -18,9 +20,7 @@ object AppPreferences {
     /** 是否已完成新手引导 */
     suspend fun isOnboardingCompleted(context: Context): Boolean {
         return try {
-            context.dataStore.data.runCatching {
-                this[Keys.ONBOARDING_COMPLETED] ?: false
-            }.getOrDefault(false)
+            context.dataStore.data.first()[Keys.ONBOARDING_COMPLETED] ?: false
         } catch (_: Exception) {
             false
         }

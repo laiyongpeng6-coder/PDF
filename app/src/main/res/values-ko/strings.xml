@@ -241,4 +241,25 @@
     <string name="onboarding_tools_desc">PDF 병합, 분할, 암호화, 워터마크, 형식 변환까지 하나의 앱으로</string>
     <string name="onboarding_manage_title">스마트 관리</string>
     <string name="onboarding_manage_desc">태그, 전문 검색, 빠른 미리보기로 모든 문서를 효율적으로 관리하세요</string>
+
+    <!-- Premium -->
+    <string name="premium_upgrade">⭐ 프리미엄 업그레이드</string>
+    <string name="premium_title">프리미엄</string>
+    <string name="premium_unlock_all">모든 프리미엄 기능 잠금 해제</string>
+    <string name="premium_tagline">오프라인 · 보안 · 광고 없음 · 평생 사용</string>
+    <string name="premium_yearly">연간 플랜</string>
+    <string name="premium_monthly">월간 플랜</string>
+    <string name="premium_lifetime">평생 이용권</string>
+    <string name="premium_period_yearly">매년 자동 갱신. 언제든지 취소 가능</string>
+    <string name="premium_period_monthly">매월 자동 갱신. 언제든지 취소 가능</string>
+    <string name="premium_period_lifetime">한 번 결제로 평생 이용</string>
+    <string name="premium_badge_popular">인기</string>
+    <string name="premium_badge_value">최고 가치</string>
+    <string name="premium_saving_hint">💡 월간 대비 40% 절약</string>
+    <string name="premium_already">이미 프리미엄 회원입니다. 모든 기능이 잠금 해제되었습니다!</string>
+    <string name="premium_purchase_success_title">🎉 구매 완료!</string>
+    <string name="premium_purchase_success_message">모든 프리미엄 기능이 잠금 해제되었습니다. 지원해 주셔서 감사합니다!</string>
+    <string name="premium_purchase_failed">결제 실패</string>
+    <string name="premium_retry">재시도</string>
+    <string name="premium_start_use">시작하기</string>
 </resources>

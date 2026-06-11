@@ -241,4 +241,25 @@
     <string name="onboarding_tools_desc">Merge, split, encrypt, watermark, and convert PDFs with ease. Everything you need in one app</string>
     <string name="onboarding_manage_title">Smart Organization</string>
     <string name="onboarding_manage_desc">Tags, full-text search, and quick preview — manage all your PDFs effortlessly</string>
+
+    <!-- Premium / Billing -->
+    <string name="premium_upgrade">⭐ Upgrade to Premium</string>
+    <string name="premium_title">Premium</string>
+    <string name="premium_unlock_all">Unlock All Premium Features</string>
+    <string name="premium_tagline">Offline &amp; Secure · Ad-free · Lifetime Access</string>
+    <string name="premium_yearly">Yearly</string>
+    <string name="premium_monthly">Monthly</string>
+    <string name="premium_lifetime">Lifetime</string>
+    <string name="premium_period_yearly">Billed yearly. Cancel anytime.</string>
+    <string name="premium_period_monthly">Billed monthly. Cancel anytime.</string>
+    <string name="premium_period_lifetime">One-time payment. Lifetime access.</string>
+    <string name="premium_badge_popular">Most Popular</string>
+    <string name="premium_badge_value">Best Value</string>
+    <string name="premium_saving_hint">💡 Save 40% vs monthly</string>
+    <string name="premium_already">You are a premium member. All features unlocked!</string>
+    <string name="premium_purchase_success_title">🎉 Purchase Successful!</string>
+    <string name="premium_purchase_success_message">All premium features are now unlocked. Thank you for your support!</string>
+    <string name="premium_purchase_failed">Payment Failed</string>
+    <string name="premium_retry">Retry</string>
+    <string name="premium_start_use">Start Using</string>
 </resources>

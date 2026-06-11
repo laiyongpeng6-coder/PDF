@@ -22,7 +22,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
@@ -37,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import com.scantidy.scan.R
 import com.scantidy.scan.ui.theme.Primary
 import kotlinx.coroutines.delay
+
 /**
  * Logo 闪屏页
  * - 展示品牌 Logo 和标语
@@ -111,14 +111,12 @@ fun SplashScreen(
 }
 
 /**
- * App Logo 矢量绘制（白色 PDF 图标 + 蓝色扫描框）
- * 与 ic_launcher_foreground 设计一致
+ * App Logo 矢量绘制（白色 PDF 文档图标 + 四角扫描框）
  */
 @Composable
 private fun AppLogoIcon(modifier: Modifier = Modifier) {
     val white = Color.White
     val accent = Color(Primary.value)
-    val accentDim = Color(0xFFA0A0A0)
 
     Canvas(modifier = modifier) {
         val w = size.width
@@ -134,14 +132,9 @@ private fun AppLogoIcon(modifier: Modifier = Modifier) {
         val foldX = docRight - halfIcon * 0.28f
         val foldY = docTop + halfIcon * 0.28f
 
-        // 文档主体
+        // 文档主体（折角文档形状）
         val docPath = Path().apply {
-            moveTo(docLeft, docTop + CornerRadius.r)
-            arcTo(
-                docLeft, docTop,
-                docLeft + CornerRadius.d, docTop + CornerRadius.d,
-                -180f, 90f, false
-            )
+            moveTo(docLeft, docTop)
             lineTo(foldX, docTop)
             lineTo(foldX, foldY)
             lineTo(docRight, foldY)
@@ -161,10 +154,10 @@ private fun AppLogoIcon(modifier: Modifier = Modifier) {
         drawPath(foldDark, Color(0xFFD0D0D0))
 
         // 折角边线
-        drawLine(accentDim, Offset(foldX, docTop), Offset(foldX, foldY), 1.5f)
-        drawLine(accentDim, Offset(foldX, foldY), Offset(docRight, foldY), 1.5f)
+        drawLine(Color(0xFFA0A0A0), Offset(foldX, docTop), Offset(foldX, foldY), 1.5f)
+        drawLine(Color(0xFFA0A0A0), Offset(foldX, foldY), Offset(docRight, foldY), 1.5f)
 
-        // PDF 文字（简化为三个色条）
+        // PDF 文字（简化为 P / D / F 三个色条）
         val textLeft = docLeft + iconSize * 0.08f
         val textTop = docTop + iconSize * 0.55f
         val barW = iconSize * 0.045f
@@ -185,7 +178,7 @@ private fun AppLogoIcon(modifier: Modifier = Modifier) {
         drawArc(
             accent,
             topLeft = Offset(dx - dHalf, textTop + dCorner),
-            size = Size(barW + dHalf * 2, barH - dCorner * 2),
+            size = Size(barW + dHalf * 2f, barH - dCorner * 2f),
             startAngle = -90f,
             sweepAngle = 180f,
             useCenter = false,
@@ -207,21 +200,16 @@ private fun AppLogoIcon(modifier: Modifier = Modifier) {
         val frameB = cy + halfIcon + frameInset
         val sw = iconSize * 0.025f
 
-        val corners = listOf(
-            // 左上
+        listOf(
             Offset(frameL, frameT + cornerLen) to Offset(frameL, frameT),
             Offset(frameL, frameT) to Offset(frameL + cornerLen, frameT),
-            // 右上
             Offset(frameR - cornerLen, frameT) to Offset(frameR, frameT),
             Offset(frameR, frameT) to Offset(frameR, frameT + cornerLen),
-            // 右下
             Offset(frameR, frameB - cornerLen) to Offset(frameR, frameB),
             Offset(frameR, frameB) to Offset(frameR - cornerLen, frameB),
-            // 左下
             Offset(frameL + cornerLen, frameB) to Offset(frameL, frameB),
             Offset(frameL, frameB) to Offset(frameL, frameB - cornerLen)
-        )
-        corners.forEach { (start, end) ->
+        ).forEach { (start, end) ->
             drawLine(white, start, end, sw, cap = StrokeCap.Round)
         }
     }

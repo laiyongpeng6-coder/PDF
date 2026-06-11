@@ -241,4 +241,25 @@
     <string name="onboarding_tools_desc">PDFの結合・分割、暗号化、透かし、フォーマット変換をひとつのアプリで</string>
     <string name="onboarding_manage_title">スマート管理</string>
     <string name="onboarding_manage_desc">タグ付け、全文検索、クイックプレビューで文書を効率的に整理</string>
+
+    <!-- Premium -->
+    <string name="premium_upgrade">⭐ プレミアムにアップグレード</string>
+    <string name="premium_title">プレミアム</string>
+    <string name="premium_unlock_all">すべてのプレミアム機能を解除</string>
+    <string name="premium_tagline">オフライン・安全 · 広告なし · 永年利用</string>
+    <string name="premium_yearly">年間プラン</string>
+    <string name="premium_monthly">月間プラン</string>
+    <string name="premium_lifetime">買い切り</string>
+    <string name="premium_period_yearly">毎年自動更新。いつでもキャンセル可能</string>
+    <string name="premium_period_monthly">毎月自動更新。いつでもキャンセル可能</string>
+    <string name="premium_period_lifetime">一度の購入で永年利用可能</string>
+    <string name="premium_badge_popular">人気No.1</string>
+    <string name="premium_badge_value">お得</string>
+    <string name="premium_saving_hint">💡 月額より40%お得</string>
+    <string name="premium_already">プレミアム会員です。すべての機能がご利用いただけます</string>
+    <string name="premium_purchase_success_title">🎉 購入完了！</string>
+    <string name="premium_purchase_success_message">プレミアム機能がすべて解除されました。ありがとうございます！</string>
+    <string name="premium_purchase_failed">支払いに失敗しました</string>
+    <string name="premium_retry">再試行</string>
+    <string name="premium_start_use">使い始める</string>
 </resources>

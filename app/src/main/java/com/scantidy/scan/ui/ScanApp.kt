@@ -36,6 +36,7 @@ import com.scantidy.scan.ui.nav.SubRoute
 import com.scantidy.scan.ui.nav.bottomTabs
 import com.scantidy.scan.ui.onboarding.OnboardingScreen
 import com.scantidy.scan.ui.onboarding.SplashScreen
+import com.scantidy.scan.ui.premium.PremiumScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -139,7 +140,11 @@ private fun MainApp() {
                     onLink = { navController.navigate(SubRoute.LinkInput.route) }
                 )
             }
-            composable(Destination.Settings.route) { SettingsScreen() }
+            composable(Destination.Settings.route) {
+                SettingsScreen(
+                    onPremiumClick = { navController.navigate(SubRoute.Premium.route) }
+                )
+            }
 
             composable(SubRoute.Camera.route) {
                 CameraScreen(
@@ -199,6 +204,9 @@ private fun MainApp() {
                     documentId = docId,
                     onBack = { navController.popBackStack() }
                 )
+            }
+            composable(SubRoute.Premium.route) {
+                PremiumScreen(onBack = { navController.popBackStack() })
             }
         }
     }
